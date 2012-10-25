@@ -13,6 +13,7 @@ class UrlsController < ApplicationController
 	end
 
 	def create
+		logger.info(params[:url])
 		@url = Url.new(params[:url])
 
 		respond_to do |format|
@@ -30,6 +31,10 @@ class UrlsController < ApplicationController
 	def show
 		@url = Url.find(params[:id])
 	end
-	
+
+	def go
+		@url = Url.find_by_mini_link(params[:id])
+		redirect_to @url.source
+	end
 
 end
