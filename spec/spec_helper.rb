@@ -13,7 +13,6 @@ Spork.prefork do
   require 'capybara/rspec'
   require 'capybara/firebug'
   require 'database_cleaner'
-  require 'email_spec'
   require 'shoulda-matchers'
   
   # Requires supporting ruby files with custom matchers and macros, etc,
@@ -43,8 +42,6 @@ Spork.prefork do
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = false
     
-    config.include(EmailSpec::Helpers)
-    config.include(EmailSpec::Matchers)
   end
   
 end
