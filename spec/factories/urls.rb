@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :url do
+  	source 		"https://www.google.com/"
+  	mini_link	"https://www.google.com/"
   end
 end
