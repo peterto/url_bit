@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Url do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should respond_to(:source) }
+  it { should respond_to(:mini_link) }
+ 
+  it { should validate_presence_of(:source) }
+  it { should validate_presence_of(:mini_link) }
+
 end
