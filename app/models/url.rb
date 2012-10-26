@@ -5,16 +5,16 @@ class Url < ActiveRecord::Base
 
   before_create :shorten_url
 
+
   private
 
-	  def shorten_url
-
-	  	if Url.any?
-	  		shorten_url = Url.last.mini_link.to_i + 1
-	  		self.mini_link = shorten_url.to_s
-			else
-		  	self.mini_link = Time.now.utc.to_i.to_s
-	  	end
-	  end
+  def shorten_url
+    if Url.any?
+      shorten_url = Url.last.mini_link.to_i + 1
+      self.mini_link = shorten_url.to_s
+    else
+      self.mini_link = Time.now.utc.to_i.to_s
+    end
+  end
   
 end
