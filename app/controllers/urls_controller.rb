@@ -2,30 +2,29 @@ class UrlsController < ApplicationController
 	respond_to :html, :json
 
 	def index
-		@urls = Url.all
+		respond_with(@urls = Url.all)
 	end
 
 	def new
-		@url = Url.new
+		respond_with(@url = Url.new)
 	end
 
 	def create
 		@url = Url.new(params[:url])
 
-		respond_to do |format|
-			if @url.save
-				format.html { redirect_to @url, :notice => "URL has been created" }
-				format.json { render :json => @url }
-			else
-				format.html { render :new }
-				format.json { render :json => @url.errors }
-			end
-		end
+		respond_with(@url) do |format|
+      if @url.save
+        flash[:notice] = "URL was created successfully."
+        format.html { redirect_to @url }
+      else
+        format.html { render :new }
+      end
+    end
 
 	end
 
 	def show
-		@url = Url.find(params[:id])
+		respond_with(@url = Url.find(params[:id]))
 	end
 
 	def go
