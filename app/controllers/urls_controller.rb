@@ -1,11 +1,8 @@
 class UrlsController < ApplicationController
-	respond_to    :html, :json
+	respond_to :html, :json
 
 	def index
 		@urls = Url.all
-
-		respond_with(@urls)
-
 	end
 
 	def new
@@ -13,7 +10,6 @@ class UrlsController < ApplicationController
 	end
 
 	def create
-		logger.info(params[:url])
 		@url = Url.new(params[:url])
 
 		respond_to do |format|
