@@ -9,12 +9,14 @@ class Url < ActiveRecord::Base
   private
 
   def shorten_url
-    if Url.any?
-      shorten_url = Url.last.mini_link.to_i(36) + 1
-      self.mini_link = shorten_url.to_s(36) # Apply a base 36 numbering system (a-z, 0-9)
-    else
-      self.mini_link = Time.now.utc.to_i.to_s(36) # Apply a base 36 numbering system (a-z, 0-9)
-    end
+    self.mini_link = random_string
+  end
+
+  def random_string
+    num = ""
+    arr = ((48...57).to_a + (64...90).to_a + (97...122).to_a ) # Generates a random 7 character string that includes 0-9, A-Z, or a-z based on ascii codes
+    7.times { num << arr[rand(arr.length)] }
+    num
   end
   
 end
