@@ -4,17 +4,14 @@ $(function() {
 	$("form").submit(function(e) {
 		e.preventDefault();
 		$.ajax({
-				type: "POST",
-				url: "/urls",
-				async: true,
-				dataType: "json",
-				data: $(this).serialize(), 
-				success: function(response) {
-					$("form").after('<p><a href="' + response.source + '">' + location.href + response.mini_link + '</a></p>');
-				}
-
-			});
+            type: "POST",
+            url: "/urls",
+            async: true,
+            dataType: "json",
+            data: $(this).serialize(),
+            success: function(response) {
+                $("form").after('<p><a href="' + response.source + '">' + location.href + response.mini_link + '</a></p>');
+            }
+        });
 	});
-
-
 });
