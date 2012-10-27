@@ -1,3 +1,6 @@
 <h1>urls#show</h1>
 
+%p
+  = flash[:notice]
+
 = link_to "#{root_url + @url.mini_link}", "#{root_url + @url.mini_link}"
