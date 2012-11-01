@@ -16,7 +16,12 @@ class Url < ActiveRecord::Base
     num = ""
     arr = ((48...57).to_a + (64...90).to_a + (97...122).to_a ) # Generates a random 7 character string that includes 0-9, A-Z, or a-z based on ascii codes
     7.times { num << arr[rand(arr.length)] }
-    num
+
+    if (Url.find_by_mini_link(num))
+      random_string
+    else
+      num
+    end
   end
   
 end
