@@ -20,7 +20,7 @@ class UrlsController < ApplicationController
       @url = Url.new(params[:url])
       respond_with(@url) do |format|
         if @url.save
-          flash[:notice] = "URL was created successfully."
+          flash[:notice] = "URL was created successfully"
           format.html { redirect_to @url }
         else
           format.html { render :new }
