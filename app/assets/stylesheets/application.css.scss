@@ -12,8 +12,40 @@
  *= require_tree .
  */
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
+@import url(http://fonts.googleapis.com/css?family=Strait);
 
 body {
-	margin: 50px auto;
-	text-align: center;
+  background-color: #EBE7D7;
+  font-family: "Strait";
+}
+.container, .navbar-fixed-top > .container {
+  width: 700px;
+}
+.main {
+  margin-top: 100px;
+}
+.navbar-fixed-top {
+  padding: 15px 0;
+}
+h1.logo {
+  font-family: "Share Tech Mono";
+  float: left;
+}
+ul.nav-links {
+  list-style-type: none;
+  float: right;
+  margin-top: 18px;
+  li {
+    display: inline-block;
+    margin-left: 25px;
+    a {
+      padding: 5px 8px;
+      border: 2px solid #888;
+      border-radius: 5px;
+      font-size: 11px;
+      text-decoration: none;
+      color: #333;
+    }
+  }
 }
