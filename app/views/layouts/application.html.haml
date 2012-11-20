@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title="UrlBit"
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{class: body_classes }
+    .navbar.navbar-fixed-top
+      .container
+        %h1.logo
+          UrlBit
+        .nav-collapse
+          %ul.nav-links
+            %li
+              =link_to "SIGN UP", "#"
+            %li
+              =link_to "LOG IN", "#"
+
+    .main
+      .container
+        = yield
