@@ -1,3 +1,40 @@
-// Place all the styles related to the urls controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body.urls.new {
+  .control-group {
+    display: inline;
+  }
+  .controls {
+    display:inline;
+  }
+
+  form.new_url {
+    padding: 20px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+    border: 1px solid #C3C1C0;
+    text-align: center;
+  }
+
+  #url_source {
+    padding: 5px;
+    height: 25px;
+    width: 300px;
+    margin: 0;
+    vertical-align: bottom;
+    border-radius: 0;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  button {
+    height: 37px;
+    margin-left: -5px;
+    border-radius: 0 5px 5px 0;
+    background: #3D8DCB;
+    border: none;
+    color: white;
+    font-family: "Strait";
+    padding: 5px 20px;
+  }
+
+}
